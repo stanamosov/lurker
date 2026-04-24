@@ -1,12 +1,7 @@
 const express = require("express");
 const rateLimit = require("express-rate-limit");
 const path = require("node:path");
-const cookieParser = require("cookie-parser");
 const app = express();
-const hasher = new Bun.CryptoHasher("sha256", "secret-key");
-const JWT_KEY = hasher.update(Math.random().toString()).digest("hex");
-
-module.exports = { JWT_KEY };
 
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "pug");
@@ -16,7 +11,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.static(path.join(__dirname, "assets")));
-app.use(cookieParser());
 app.use(
 	rateLimit({
 		windowMs: 15 * 60 * 1000,

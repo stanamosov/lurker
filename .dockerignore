@@ -1,0 +1,7 @@
+node_modules
+.git
+*.db
+data
+reference
+result
+.direnv

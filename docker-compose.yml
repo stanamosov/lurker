@@ -1,0 +1,11 @@
+services:
+  lurker:
+    build: .
+    container_name: lurker
+    volumes:
+      - ./data:/data
+    ports:
+      - "3000:3000"
+    restart: unless-stopped
+    environment:
+      - LURKER_PORT=3000

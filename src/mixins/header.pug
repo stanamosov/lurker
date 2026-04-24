@@ -1,4 +1,4 @@
-mixin header(user)
+mixin header()
   - var viewQuery = 'view=' + (query && query.view ? query.view : 'compact')
   div.header
     div.header-item
@@ -9,12 +9,3 @@ mixin header(user)
       a(href=`/search?${viewQuery}`) search
     div.header-item
       a(href=`/subs?${viewQuery}`) subs
-    if user
-      div.header-item
-        a(href=`/dashboard?${viewQuery}`) #{user.username}
-        |&nbsp;
-        a(href='/logout') (logout)
-    else
-      div.header-item
-        a(href=`/login`) login
-
