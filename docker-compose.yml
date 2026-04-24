@@ -5,7 +5,7 @@ services:
     volumes:
       - ./data:/data
     ports:
-      - "3000:3000"
+      - "9795:3000"
     restart: unless-stopped
     environment:
-      - LURKER_PORT=3000
+      - LURKER_PORT=9795
