@@ -2,6 +2,7 @@ services:
   lurker:
     build: .
     container_name: lurker
+    network_mode: bridge
     volumes:
       - ./data:/data
     ports:
