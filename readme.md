@@ -40,7 +40,17 @@ services:
 then:
 
 ```bash
-docker compose up --build
+# build and start
+docker compose up --build -d
+
+# stop and remove
+docker compose down
+
+# view logs
+docker compose logs -f
+
+# rebuild after making changes
+docker compose down && docker compose up --build -d
 ```
 
 ### environment variables
